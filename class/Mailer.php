@@ -14,12 +14,16 @@ final class Mailer {
     private string $body;
     private array $attachments;
 
-    public function __construct($recipient, $recipientsName, $subject, $body, $attachments) {
-        $this->recipient = $recipient;
+    public function __construct($recipientsName, $subject, $body, $attachments) {
         $this->recipientsName = $recipientsName;
         $this->subject = $subject;
         $this->body = $body;
         $this->attachments = $attachments;
+    }
+
+    public function setRecipient($type) {
+        if (strcmp($type, 'Airbus A380')) $this->recipient = $_ENV['AIRBUS_EMAIL'];
+        if (strcmp($type, 'Boeing 747')) $this->recipient = $_ENV['BOEING_EMAIL'];
     }
 
     public function send(): bool {
