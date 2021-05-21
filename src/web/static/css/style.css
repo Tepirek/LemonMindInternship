@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+form {
+  flex-grow: 1;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.uploadBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.uploadedFiles,
+.currentCargos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid lightgray;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.fileItem,
+.cargoItem {
+  border: 1px solid seagreen;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  flex-direction: column;
+}
+
+.fileItemName,
+.cargoItemName,
+.cargoItemWeight {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.box__files {
+  background-color: aquamarine;
+  display: none;
+}
+
+.addNewCargo {
+  display: flex;
+  align-items: center;
+}
+
+.addNewCargo i {
+  cursor: pointer;
+}
+
+.newCargo {
+  display: none;
+}
+
+[id^="delete_file_"],
+[id^="delete_cargo_"] {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+[id^="delete_file_"]:hover,
+[id^="delete_cargo_"]:hover {
+  background-color: #e2000f;
+  border-radius: 20px;
+}
+
+/* FONTELLO */
+
+.icon-upload,
+.icon-flight,
+.icon-file-pdf,
+.icon-doc,
+.icon-file-image {
+  font-size: 3rem;
+}
