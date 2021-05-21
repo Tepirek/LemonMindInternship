@@ -25,9 +25,14 @@
 4. uruchomić serwer SQL w terminalu:
   - `mysql -u [username] -p`
   - przykładowo `mysql -u root -p`
-5. w terminalu SQL uruchomić jednorazowo komend, która utworzy bazę oraz tabele:
+5. w terminalu SQL uruchomić jednorazowo komendę, która utworzy bazę oraz tabele:
   - `source [ścieżka do pliku create.sql]`
   - przykładowo `source C:\GitHub\LemonMind2021\config\create.sql`
 6. formularz dostępny jest pod adresem `http://localhost:8080/`
 
 ### Dodatkowe informacje
+  - pod adresem `http://localhost:8080/api/transports` można podejrzeć rekordy z tabeli `transports`
+  - pod adresem `http://localhost:8080/api/cargos` można podejrzeć rekordy z tabeli `cargos`
+  - w celu zresetowania bazy należy analogicznie do #5. z instrukcji uruchomić:
+    - `source [ścieżka do pliku drop.sql]`
+    - przykładowo `source C:\GitHub\LemonMind2021\config\drop.sql`
