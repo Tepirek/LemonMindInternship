@@ -9,6 +9,11 @@
 - [x] zadanie nr 4
 - [x] dodawanie rekordów do bazy danych
 - [x] REST-ishowa API-ishowa walidacja i przesyłanie formularza
+
+## Braki
+- [x] API reaguje tylko na potrzebne na rzecz rozwiązania zapytania GET i POST
+- [x] wygląd formularza oraz treść maila nie powalają stylem
+- [x] na pewno są gdzieś jakieś bugi, które mogłem przeoczyć z braku czasu na dobrą implementację 
  
 ## Wymagania konfiguracyjne
 - PHP możliwy do pobrania [tutaj](https://www.php.net/downloads.php)
