@@ -49,7 +49,7 @@ class CargoController extends Controller {
             $validWeight = ($airplaneType === 'Airbus A380' && $weight > 35000) ? false : (($airplaneType === 'Boeing 747' && $weight > 38000) ? false : true);
             $validType = in_array($type, ['normal', 'dangerous']);
 
-            if ($validName && $validWeight && $validType) return true;
+            if ($validName && $validWeight && $validType) return $cargos;
             return false;
         }
     }

@@ -26,23 +26,35 @@ class TransportController extends Controller {
                 break;
             case 'POST':
                 $cargoController = new CargoController($this->requestMethod);
-                $cargo = $cargoController->validateInput();
+                $cargos = $cargoController->validateInput();
                 $data = $this->validateInput();
-                if ($cargo === false || $data === false) {
+                if ($cargos === false || $data === false) {
                     $response = $this->buildResponse(409, [
                         'message' => 'przesłane dane są niepoprawne'
                     ]);
                 } else {
                     $_POST['transport_id'] = $this->model->insert($data);
                     $cargoController->handleRequest();
+                    $cargoContent = '';
+                    foreach ($cargos as $cargo) {
+                        $cargoContent .= sprintf("
+                        <tr>
+                            <td>%s</td>
+                            <td>%s</td>
+                            <td>%s</td>
+                        </tr>
+                    ", $cargo['name'], $cargo['weight'], $cargo['type']);
+                    }
+                    $body = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/../../templates/emailTemplate.html');
+                    $body = str_replace(['SOURCE', 'DESTINATION', 'TYPE', 'DATE', 'CARGO_CONTENT'], [$data['source'], $data['destination'], $data['type'], $data['date'], $cargoContent], $body);
                     $mailer = new Mailer(
                         'tepirek@gmail.com',
                         'Arkadiusz Tepper',
                         'Transport No. ' . $_POST['transport_id'],
-                        'TEST',
+                        $body,
                         $data['files']
                     );
-                    // $mailer->send();
+                    $mailer->send();
                 }
                 break;
             case 'PUT':
