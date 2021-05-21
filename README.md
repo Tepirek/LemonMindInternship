@@ -19,5 +19,15 @@
 2. utworzyć plik `.env` i wypełnić swoimi danymi jak w pliku `.env.example`
   - uzupełnić własnymi danymi `DB_USERNAME`, `DB_PASSWORD`
   - uzupełnić własnymi danymi zmienne dla [mailtrap.io](https://mailtrap.io/) rozpoczynające się prefixem `MTP_`
+3. uruchomić serwer webowy w terminalu:
+  - `php -S localhost:8080 -t [ścieżka do folderu /web]`
+  - przykładowo `php -S localhost:8080 -t ./src/web`
+4. uruchomić serwer SQL w terminalu:
+  - `mysql -u [username] -p`
+  - przykładowo `mysql -u root -p`
+5. w terminalu SQL uruchomić jednorazowo komend, która utworzy bazę oraz tabele:
+  - `source [ścieżka do pliku create.sql]`
+  - przykładowo `source C:\GitHub\LemonMind2021\config\create.sql`
+6. formularz dostępny jest pod adresem `http://localhost:8080/`
 
 ### Dodatkowe informacje
