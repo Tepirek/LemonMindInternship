@@ -14,7 +14,7 @@ $router = new Router();
 $router::setDefault('/', function () {
     require('../../views/transport.php');
 });
-$router::set('/api/transport', function () {
+$router::set('/api/transports', function () {
     $controller = new TransportController($_SERVER['REQUEST_METHOD']);
     $controller->handleRequest();
 });

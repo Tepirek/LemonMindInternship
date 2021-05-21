@@ -154,7 +154,7 @@
         Array.from(files).forEach(file => {
             formData.append('files[]', file.file);
         });
-        sendRequest('POST', '/api/transport', formData).then((result) => {
+        sendRequest('POST', '/api/transports', formData).then((result) => {
             submit.innerHTML = 'Wysłano';
             submit.classList.remove('btn-primary');
             submit.classList.add('btn-success');
